@@ -24,5 +24,6 @@ public class HelloSpring {
         String message = "こんにちは！" + nickname + sexuality + "が好きなディストリビューションは" + distribution + "ですね！";
         model.addAttribute("th_greet", message);
         return "index";
+        
     }
 }
