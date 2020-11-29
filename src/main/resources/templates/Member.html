@@ -3,25 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Member.css">
+    <link rel="stylesheet" href="hoverhikei.js">
     <title>メンバー登録</title>
 </head>
-<body>
+<body >
+
+
 <main>
-    <h1>メンバー登録画面</h1>
+
+    <h1>メンバー登録</h1>
+
     <p th:text="${th_greet}" class="greet"></p>
+    <p th:text="${th_greet01}" class="greet01"></p>
     <form method="POST" action="">
-        <p>Name</p>
-        <input type="form" name="nickname" placeholder="ニックネーム">
-        <div>
-            <input id="radio_male" type="radio" name="radio_1" value="male">
+
+        <p><span class="required">必須</span>名前</p>
+        <!-- required入力必須警告/autofocus入力自動フォーカス -->
+        <input class="nickname" type="form" name="nickname" placeholder="フルネーム" required autofocus>
+
+
+        <p><span class="required">必須</span>メールアドレス</p>
+        <input class="email" type="email" name="email01" placeholder="メールアドレス" required size="30" maxlength="50">
+
+        <p><span class="required">必須</span>電話番号</p>
+        <input class="tel" type="tel" name="tel01" placeholder="電話番号" required size="30" maxlength="13">
+
+
+        <div class="people"><span class="required">必須</span>
+            <input id="radio_male" type="radio" name="radio_1" value="male" required>
             <label for="radio_male">男性</label>
-            <input id="radio_female" type="radio" name="radio_1" value="female">
+            <input id="radio_female" type="radio" name="radio_1" value="female" required>
             <label for="radio_female">女性</label>
             <!--            そのうち追加する項目-->
             <!--            <input id="radio_other" type="radio" name="radio_1" value="other">-->
             <!--            <label for="radio_other">その他</label>-->
         </div>
-        <p>移住地域</p>
+        <p><span class="required">必須</span>お住まいの地域</p>
         <select id="select_1" name="favorite_distribution">
             <option value="北海道">北海道</option>
             <option value="青森県">青森県</option>
@@ -73,7 +91,7 @@
             <option value="海外">海外</option>
         </select>
         <div style="margin: 2rem 0rem">
-            <input type="submit" value="登録">
+            <input  type="submit" value="登録" style="background-color:aliceblue;">
         </div>
     </form>
 </main>
