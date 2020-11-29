@@ -11,7 +11,7 @@ public class Member {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String getIndex(Model model) {
-        model.addAttribute("th_greet", "こんにちは！指名を入力してください");
+        model.addAttribute("th_greet", "こんにちは！情報を入力してください");
         return "Member";
     }
 
@@ -20,8 +20,8 @@ public class Member {
                             @RequestParam("radio_1") String sex,
                             @RequestParam("favorite_distribution") String distribution,
                             Model model) {
-        String sexuality = sex.equals("male") ? "くん" : "ちゃん";
-        String message = "こんにちは！" + nickname + sexuality + "が好きなディストリビューションは" + distribution + "ですね！";
+        String sexuality = sex.equals("male") ? "さん" : "さん";
+        String message = "ありがとうございます！" + nickname + sexuality + "がお住まいの地域は" + distribution + "で登録致しました";
         model.addAttribute("th_greet", message);
         return "Member";
     }
