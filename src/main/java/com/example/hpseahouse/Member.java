@@ -20,7 +20,8 @@ public class Member {
                             @RequestParam("radio_1") String sex,
                             @RequestParam("favorite_distribution") String distribution,
                             @RequestParam("email01") String email,
-                            @RequestParam("tel01") long tell,
+//                            long,intにして番号中に＜ー＞を入れたらエラーが起きるのでStringに変更
+                            @RequestParam("tel01") String tell,
                             Model model) {
         String sexuality = sex.equals("male") ? "さん" : "さん";
         String message = "ありがとうございます！" + nickname + sexuality + "がお住まいの地域は" + distribution ;

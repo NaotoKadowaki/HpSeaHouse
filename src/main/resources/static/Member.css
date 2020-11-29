@@ -24,9 +24,16 @@ input,.nickname{
     font-size: x-large;
     text-align: center;
 }
-input:focus{
-    background: rgb(127, 167, 228, 0.5);
+/*invalid/valid/入力不備を知らせる*/
+input:invalid{
+background:#FFCDD3;
 }
+input:valid{
+background:transparent;
+}
+/*input:focus{
+    background: rgb(127, 167, 228, 0.5);
+}*/
 .email{
     margin: 5px;
 }
