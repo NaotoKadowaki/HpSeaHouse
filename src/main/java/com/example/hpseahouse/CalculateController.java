@@ -19,7 +19,7 @@ public class CalculateController {
     public String result(@ModelAttribute Form form, Model model){
         form.sumTotal();
         model.addAttribute("form",form);
-        return"result";
+        return"calculate";
     }
 
 }

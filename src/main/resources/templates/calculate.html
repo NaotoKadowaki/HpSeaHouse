@@ -13,6 +13,8 @@
     <p>Second number: <input type="number"th:field="*{num2}"/></p>
     <p><input type="submit" value="calculate"></p>
 </form>
-
+<h1>Result</h1>
+<p th:text="'Answer' + ${form.getTotal()}"></p>
+<a href="/calculate">Calculate Another number</a>
 </body>
 </html>

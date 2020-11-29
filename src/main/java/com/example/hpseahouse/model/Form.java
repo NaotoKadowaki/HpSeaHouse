@@ -24,7 +24,7 @@ public class Form {
         this.total = total;
     }
     public void sumTotal(){
-        total = this.num1 + this.num2;
+        total = this.num1 * this.num2;
         setTotal(total);
     }
 }
