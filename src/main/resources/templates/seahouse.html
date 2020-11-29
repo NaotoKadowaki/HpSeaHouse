@@ -10,6 +10,39 @@
     <!-- インスタ埋め込みをしてもうまくいかない、表示されないので下fileを読み込ませる -->
     <script async src="https://www.instagram.com/static/bundles/es6/EmbedSDK.js/2fe3a16f6aeb.js"></script>
     <title>seaHouse</title>
+    <style type="text/css">
+        #photo {
+            width: 900px;
+            height: 500px;
+            margin: 0 auto;
+            text-align: left;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #photo img {
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+        </style>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var setImg = '#photo';
+            var fadeSpeed = 1600;
+            var switchDelay = 5000;
+
+            $(setImg).children('img').css({opacity:'0'});
+            $(setImg + ' img:first').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
+
+            setInterval(function(){
+                $(setImg + ' :first-child').animate({opacity:'0'},fadeSpeed).next('img').animate({opacity:'1'},fadeSpeed).end().appendTo(setImg);
+            },switchDelay);
+        });
+        </script>
 </head>
 <body>
 <div class="container">
@@ -19,7 +52,13 @@
     </header>
     <main class="main">
         <div class="sea">
-            <img src="http://naotnaot.sakura.ne.jp/seaSample.jpg" alt="海の画像">
+<!--            <img src="http://naotnaot.sakura.ne.jp/seaSample.jpg" alt="海の画像">-->
+            <div id="photo" class="sea">
+                <img src="https://publicdomainq.net/images/202001/20s/publicdomainq-0042098xva.jpg" width="500" height="300" alt="">
+                <img src="https://beiz.jp/images_T/sea-ocean/sea-ocean_00025.jpg" width="500" height="300" alt="">
+                <img src="https://cdn.piapro.jp/thumb_i/66/66869iube71kvdpy_20110112224520_0740_0500.jpg" width="500" height="300" alt="">
+                <img src="https://lh3.googleusercontent.com/proxy/Qd-Zws_tXoq689wllTNf1UkDXf9QYFA1k7dcsDudo2N-qxqf8LdSAOpzipui0Bh_lNSOs_GXHh2XSElGcNADMpCkQSoMsbl3-M9nEBWJYV8i0WxZG8rVzPgHhIyrtHgaj2YG" width="500" height="300" alt="">
+            </div>
             <p>BBQ Camp Sea</p>
         </div>
 
