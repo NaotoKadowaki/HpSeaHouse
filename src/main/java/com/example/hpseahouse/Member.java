@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class Member {
 
-    @RequestMapping(value = "/member", method = RequestMethod.GET)
+    @RequestMapping(value = "/Member", method = RequestMethod.GET)
     public String getIndex(Model model) {
         model.addAttribute("th_greet", "こんにちは！情報を入力してください");
         return "Member";
     }
 
-    @RequestMapping(value = "/member", method = RequestMethod.POST)
+    @RequestMapping(value = "/Member", method = RequestMethod.POST)
     public String postIndex(@RequestParam("nickname") String nickname,
                             @RequestParam("radio_1") String sex,
                             @RequestParam("favorite_distribution") String distribution,
