@@ -27,9 +27,10 @@ public class LoginController {
                 String pass = form.getPass();
 //                ログインチェック
 //        IDがUser、パスワードがPasswordなら成功。その場合の処理
-        if((id.equals("user"))&&(pass.equals("password"))){
+        if((id.equals("Naoto"))&&(pass.equals("Naoto"))){
             System.out.println("ログイン成功");
-            return"redirect:/afterlogin";
+            return"redirect:/"; //afterlogin切り取り
+
         }
 //        ログイン失敗の場合
         else{
@@ -40,3 +41,4 @@ public class LoginController {
         }
     }
 }
+
